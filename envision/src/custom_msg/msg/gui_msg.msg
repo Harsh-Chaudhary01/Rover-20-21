@@ -1,0 +1,15 @@
+int32 flag_ob_avoid_or_g2g 
+int32 goal_no
+float64 distance
+float64 linear_velocity_cmd_vel
+float64 angular_velocity_cmd_vel
+float64 imu_a_x
+float64 imu_a_y
+float64 imu_a_z
+float64 imu_w_x
+float64 imu_w_y
+float64 imu_w_z
+float64 gps_lat
+float64 gps_lon
+float64 location_x
+float64 location_y
