@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- include gazebo_ros launcher -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find rover_nm)/config/joint_names_rover_nm.yaml" command="load"/>
+
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/rover_nm" args="joint1_position_controller joint2_position_controller joint3_position_controller joint4_position_controller joint5_position_controller joint6_position_controller joint_state_controller"/>
+
+
+  <!-- Spawn a robot into Gazebo -->
+<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen" args="-file $(find rover_nm)/urdf/rover_nm.urdf -urdf -z 0.5 -model rover_nm" />
+
+<param name="robot_description" command="cat $(find rover_nm)/urdf/rover_nm.urdf" />
+<node
+    name="harsh_py"
+    pkg="rover_nm" 
+    type="harsh_py.py" />
+
+</launch>
