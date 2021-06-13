@@ -1,0 +1,28 @@
+controller_joint_names: ['', 'frocker_r_rev', 'fwheel_r_con', 'mwheel_r_con', 'frocker_l_rev', 'fwheel_l_con', 'mwheel_l_con', 'brocker_rev', 'bwheel_r_con', 'bwheel_l_con']
+rover_nm:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  # Position Controllers ---------------------------------------
+  joint1_position_controller:
+    type: effort_controllers/JointEffortController
+    joint: fwheel_l_con 
+
+  joint2_position_controller:
+    type: effort_controllers/JointEffortController
+    joint: fwheel_r_con
+  joint3_position_controller:
+    type: effort_controllers/JointEffortController
+    joint: mwheel_l_con
+  joint4_position_controller:
+    type: effort_controllers/JointEffortController
+    joint: mwheel_r_con
+  joint5_position_controller:
+    type: effort_controllers/JointEffortController
+    joint: bwheel_l_con
+  joint6_position_controller:
+    type: effort_controllers/JointEffortController
+    joint: bwheel_r_con
+
