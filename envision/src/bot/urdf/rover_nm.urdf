@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+   
+  For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+
+<robot
+  name="rover_nm">
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.320877587622856 -0.225001925728233 -0.105530569488731"
+        rpy="0 0 0" />
+      <mass
+        value="6.94355273280968" />
+      <inertia
+        ixx="0.075449475796778"
+        ixy="1.04350191058791E-10"
+        ixz="-1.74014083886425E-07"
+        iyy="0.161698135634488"
+        iyz="-2.19654966799193E-08"
+        izz="0.236508134017385" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="frocker_r">
+    <inertial>
+      <origin
+        xyz="-0.00592561850504691 -0.204564345826246 -0.656868984407314"
+        rpy="0 0 0" />
+      <mass
+        value="3.62808269849788" />
+      <inertia
+        ixx="0.00500906208576131"
+        ixy="5.33501708978563E-05"
+        ixz="9.53784206745595E-06"
+        iyy="0.00567797312385158"
+        iyz="2.01062637665319E-06"
+        izz="0.00521828016258716" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/frocker_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/frocker_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frocker_r_rev"
+    type="revolute">
+    <origin
+      xyz="0.50364 0.1 -0.1463"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="frocker_r" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="1000"
+      velocity="20" />
+  </joint>
+  <link
+    name="fwheel_r">
+    <inertial>
+      <origin
+        xyz="6.60280517483791E-08 1.77123457012485E-08 -0.126320037033419"
+        rpy="0 0 0" />
+      <mass
+        value="4.57641810426623" />
+      <inertia
+        ixx="0.0229681622888871"
+        ixy="4.71906040971757E-05"
+        ixz="-2.21722568735427E-09"
+        iyy="0.0228054415849527"
+        iyz="-3.99949391035172E-10"
+        izz="0.0411576023588561" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/fwheel_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/fwheel_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fwheel_r_con"
+    type="continuous">
+    <origin
+      xyz="-0.19005 -0.22827 -0.54388"
+      rpy="0 0 0" />
+    <parent
+      link="frocker_r" />
+    <child
+      link="fwheel_r" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="1000"
+      velocity="20" />
+  </joint>
+  <link
+    name="mwheel_r">
+    <inertial>
+      <origin
+        xyz="-5.91611056255381E-08 -3.4707929252864E-08 -0.130204609714584"
+        rpy="0 0 0" />
+      <mass
+        value="4.57641810426621" />
+      <inertia
+        ixx="0.0229326959626408"
+        ixy="8.20987129982337E-05"
+        ixz="1.61130510234012E-09"
+        iyy="0.022840907911199"
+        iyz="1.21730209284914E-09"
+        izz="0.041157602358856" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/mwheel_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/mwheel_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mwheel_r_con"
+    type="continuous">
+    <origin
+      xyz="0.15245 -0.25777 -0.58"
+      rpy="0 0 0" />
+    <parent
+      link="frocker_r" />
+    <child
+      link="mwheel_r" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="1000"
+      velocity="20" />
+  </joint>
+  <link
+    name="frocker_l">
+    <inertial>
+      <origin
+        xyz="-0.00944405559357619 -0.204322904220472 0.00686898840456207"
+        rpy="0 0 0" />
+      <mass
+        value="3.62808311441716" />
+      <inertia
+        ixx="0.00500449356721194"
+        ixy="-1.30696556999598E-06"
+        ixz="8.94906673392501E-06"
+        iyy="0.00568254172043279"
+        iyz="-3.11910501041027E-06"
+        izz="0.00521828016321352" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/frocker_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/frocker_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frocker_l_rev"
+    type="revolute">
+    <origin
+      xyz="0.50364 0.1 -0.1463"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="frocker_l" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="1000"
+      velocity="20" />
+  </joint>
+  <link
+    name="fwheel_l">
+    <inertial>
+      <origin
+        xyz="-3.55382495098588E-08 5.84587933616376E-08 0.126320037033357"
+        rpy="0 0 0" />
+      <mass
+        value="4.57641810426622" />
+      <inertia
+        ixx="0.0228437540468819"
+        ixy="-8.36261814329441E-05"
+        ixz="-1.14974303853957E-09"
+        iyy="0.0229298498269578"
+        iyz="1.54141615851906E-09"
+        izz="0.041157602358856" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/fwheel_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/fwheel_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fwheel_l_con"
+    type="continuous">
+    <origin
+      xyz="-0.171879220613578 -0.242247640559571 -0.1061154273188"
+      rpy="0 0 0" />
+    <parent
+      link="frocker_l" />
+    <child
+      link="fwheel_l" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="1000"
+      velocity="20" />
+  </joint>
+  <link
+    name="mwheel_l">
+    <inertial>
+      <origin
+        xyz="-2.78106582207727E-08 6.24824636474841E-08 0.130204609714556"
+        rpy="0 0 0" />
+      <mass
+        value="4.57641810426622" />
+      <inertia
+        ixx="0.022824026705411"
+        ixy="-7.00409145902702E-05"
+        ixz="-9.92031501048409E-10"
+        iyy="0.0229495771684288"
+        iyz="1.70143610805105E-09"
+        izz="0.041157602358856" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/mwheel_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/mwheel_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mwheel_l_con"
+    type="continuous">
+    <origin
+      xyz="0.17188 -0.246 -0.07"
+      rpy="0 0 0" />
+    <parent
+      link="frocker_l" />
+    <child
+      link="mwheel_l" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="1000"
+      velocity="20" />
+  </joint>
+  <link
+    name="brocker">
+    <inertial>
+      <origin
+        xyz="-0.0762121804734934 -0.224999997620736 -0.362720491575216"
+        rpy="0 0 0" />
+      <mass
+        value="3.58373396869917" />
+      <inertia
+        ixx="0.00608413831974134"
+        ixy="-8.75712717051803E-06"
+        ixz="-1.7120014847193E-06"
+        iyy="0.00375597876242283"
+        iyz="3.88057182040686E-06"
+        izz="0.00574617112204383" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/brocker.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/brocker.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="brocker_rev"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="brocker" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="1000"
+      velocity="20" />
+  </joint>
+  <link
+    name="bwheel_r">
+    <inertial>
+      <origin
+        xyz="5.59375759046077E-08 3.92922258063422E-08 -0.127204609714564"
+        rpy="0 0 0" />
+      <mass
+        value="4.57641810426622" />
+      <inertia
+        ixx="0.0229187940524816"
+        ixy="8.84475250672452E-05"
+        ixz="-1.84713276746209E-09"
+        iyy="0.0228548098213584"
+        iyz="-9.93983412671421E-10"
+        izz="0.0411576023588561" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/bwheel_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/bwheel_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bwheel_r_con"
+    type="continuous">
+    <origin
+      xyz="-0.0753999999999999 -0.4438845726812 -0.393799999999996"
+      rpy="1.5707963267949 0 3.14159265358979" />
+    <parent
+      link="brocker" />
+    <child
+      link="bwheel_r" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="1000"
+      velocity="20" />
+  </joint>
+  <link
+    name="bwheel_l">
+    <inertial>
+      <origin
+        xyz="-1.7564247278834E-08 6.60826234288869E-08 0.127204609714559"
+        rpy="0 0 0" />
+      <mass
+        value="4.57641810426623" />
+      <inertia
+        ixx="0.0228052535039748"
+        ixy="-4.68648354323103E-05"
+        ixz="-7.40112074136293E-10"
+        iyy="0.0229683503698651"
+        iyz="1.8728456826924E-09"
+        izz="0.0411576023588561" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/bwheel_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_nm/meshes/bwheel_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bwheel_l_con"
+    type="continuous">
+    <origin
+      xyz="-0.0753999999999954 -0.00611542731880199 -0.393799999999983"
+      rpy="1.5707963267949 0 3.14159265358979" />
+    <parent
+      link="brocker" />
+    <child
+      link="bwheel_l" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="1000"
+      velocity="20" />
+  </joint>
+<transmission name="trans_bwheel_l_con">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="bwheel_l_con">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>20</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="trans_bwheel_r_con">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="bwheel_r_con">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>20</mechanicalReduction>
+    </actuator>
+  </transmission>
+ <transmission name="trans_mwheel_l_con">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="mwheel_l_con">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>20</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="trans_mwheel_r_con">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="mwheel_r_con">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>20</mechanicalReduction>
+    </actuator>
+  </transmission>
+ <transmission name="trans_fwheel_l_con">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fwheel_l_con">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor5">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>20</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="trans_fwheel_r_con">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fwheel_r_con">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor6">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>20</mechanicalReduction>
+    </actuator>
+  </transmission> 
+<gazebo>
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    <robotNamespace>/rover_nm</robotNamespace>
+  </plugin>
+</gazebo>
+</robot>
